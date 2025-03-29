@@ -5,3 +5,17 @@
 
 # If we want to use npm package for react setup
 # > npm install react     AND    > npm install react-dom
+
+
+# Episode 1 to 4 
+  - Project setup 
+  - Swiggy restraurant list ui with mock data 
+  - Code splitted
+
+# Episode 5
+  - Integrate swiggy real api to get restaurant list
+  - Fix CORS issue using Chrome extension
+  - Understanding hooks : useState() and useEffect
+  - Filtered top rated restaurants list
+  - Implemented Shimmer UI for skelton ui before data load
+  - Implemented conditional rendering
