@@ -50,12 +50,6 @@
 
   /* Top rated button */
 
-  .filter-row{
-    display: flex;
-    justify-content: end;
-    margin-right: 15px;
-  }
-
   .button {
     background-color: #04AA6D;
     border: none;
@@ -65,7 +59,6 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-top: 10px;
     cursor: pointer;
   }
 
@@ -81,4 +74,24 @@
     width: 300px;
     background-color: #ededed;
     height: 600px;
+  }
+
+  /* Input and search */
+  .filter-action{
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
+    margin: 20px 0 10px 5px;
+  }
+  .filter-action > div {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+  .filter-action input{
+    width: 60%;
+    height: 42px;
+    font-size: 20px;
+    margin-right: 10px;
   }

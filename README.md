@@ -12,10 +12,12 @@
   - Swiggy restraurant list ui with mock data 
   - Code splitted
 
-# Episode 5
+# Episode 5 to 6
   - Integrate swiggy real api to get restaurant list
   - Fix CORS issue using Chrome extension
   - Understanding hooks : useState() and useEffect
   - Filtered top rated restaurants list
   - Implemented Shimmer UI for skelton ui before data load
   - Implemented conditional rendering
+  - Search feature implemented
+  - Toggled login and logout button
