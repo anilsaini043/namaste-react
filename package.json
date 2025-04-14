@@ -19,7 +19,8 @@
   "homepage": "",
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^6.13.0"
   },
   "devDependencies": {
     "parcel": "^2.13.3",

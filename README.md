@@ -21,3 +21,7 @@
   - Implemented conditional rendering
   - Search feature implemented
   - Toggled login and logout button
+
+# Episode 7 
+  - React router dom
+  - "useRouteError" hook
