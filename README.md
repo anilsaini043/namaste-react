@@ -27,6 +27,8 @@
   - "useRouteError" hook
   - Children routes
   - 2- types of routing ( server side and client side routing )
+  - Restaurant menu page
+  - Dynamic routing with resId
 
 
 # List of Hooks 

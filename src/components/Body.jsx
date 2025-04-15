@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard.jsx";
 import ShimmerUI from "./ShimmerUI.jsx";
+import { Link } from "react-router-dom";
 
 const Body = () => {
 
@@ -31,7 +32,7 @@ const Body = () => {
     }
 
     const handleSearchClick = (e) => {
-        const searchList = listOfRestaurants.filter((el)=> el.info.name.includes(searchText));
+        const searchList = listOfRestaurants.filter((el) => el.info.name.includes(searchText));
         setSearchedRestro(searchList)
     }
 
@@ -49,7 +50,9 @@ const Body = () => {
             <div className="res-container">
                 {
                     searchedRestro.map((restaurant) => (
-                        <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
+                        <Link to={"/restaurants/" + restaurant?.info?.id} key={restaurant?.info?.id}>
+                            <RestaurantCard resData={restaurant} />
+                        </Link>
                     ))
                 }
             </div>
