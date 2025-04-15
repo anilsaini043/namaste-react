@@ -5,13 +5,14 @@ import Body from "./src/components/Body.jsx";
 import About from "./src/components/About.jsx";
 import Contact from "./src/components/Contact.jsx";
 import Error from "./src/components/Error.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const AppLayout = () => {
     return (
         <div className="app">
             <Header />
-            <Body />
+            {/* When the route change than Outlet component filled with children */}
+            <Outlet />
         </div>
     )
 };
@@ -22,15 +23,21 @@ const appRouter = createBrowserRouter([
     {
         path: "/",
         element: <AppLayout />,
+        children: [
+            {
+                path: "/",
+                element: <Body />
+            },
+            {
+                path: "/about",
+                element: <About />
+            },
+            {
+                path: "/contact",
+                element: <Contact />
+            }
+        ],
         errorElement: <Error />
-    },
-    {
-        path: "/about",
-        element: <About />
-    },
-    {
-        path: "/contact",
-        element: <Contact />
     }
 ])
 

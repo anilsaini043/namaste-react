@@ -25,3 +25,9 @@
 # Episode 7 
   - React router dom
   - "useRouteError" hook
+  - Children routes
+  - 2- types of routing ( server side and client side routing )
+
+
+# List of Hooks 
+  - useState, useEffect, useParams, useRouteError
