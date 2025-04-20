@@ -45,3 +45,6 @@
 # Episode 10
   - Explained different types of style ways and framework (Bootstrap, Ant design, Material UI, Tailwind css etc.)
   - Install or cofigure Tailwind css for styling  (We use Tailwind css)
+
+# Episode 11
+ - Higher order component

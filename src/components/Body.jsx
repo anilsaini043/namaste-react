@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import RestaurantCard from "./RestaurantCard.jsx";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard.jsx";
 import ShimmerUI from "./ShimmerUI.jsx";
 import { Link } from "react-router-dom";
 
@@ -7,8 +7,10 @@ const Body = () => {
 
     // useState is a Local state variable - - Super powerful variable
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
-    const [searchedRestro, setSearchedRestro] = useState([]);
+    const [filteredRestaurant, setFilteredRestaurant] = useState([]);
     const [searchText, setSearchText] = useState("");
+
+    const RestaurantPromotedCard = withPromotedLabel(RestaurantCard) // HOC
 
     useEffect(() => {
         fetchData()
@@ -19,12 +21,12 @@ const Body = () => {
         const json = await data.json();
         const restroList = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants  // Optional chaining
         setListOfRestaurants(restroList);
-        setSearchedRestro(restroList)
+        setFilteredRestaurant(restroList)
     }
 
     const handleTopRatedRestaurants = () => {
         const filteredRest = listOfRestaurants.filter((el) => el.info.avgRating > 4.2);
-        setSearchedRestro(filteredRest);
+        setFilteredRestaurant(filteredRest);
     }
 
     const handleSearchTextChange = (e) => {
@@ -33,7 +35,7 @@ const Body = () => {
 
     const handleSearchClick = (e) => {
         const searchList = listOfRestaurants.filter((el) => el.info.name.includes(searchText));
-        setSearchedRestro(searchList)
+        setFilteredRestaurant(searchList)
     }
 
     return listOfRestaurants.length === 0 ? <ShimmerUI /> : (
@@ -49,9 +51,11 @@ const Body = () => {
             </div>
             <div className="flex flex-wrap">
                 {
-                    searchedRestro.map((restaurant) => (
+                    filteredRestaurant.map((restaurant) => (
                         <Link to={"/restaurants/" + restaurant?.info?.id} key={restaurant?.info?.id}>
-                            <RestaurantCard resData={restaurant} />
+                            {
+                                restaurant.info.avgRating > 4.5 ? <RestaurantPromotedCard resData={restaurant} /> : <RestaurantCard resData={restaurant} />
+                            }
                         </Link>
                     ))
                 }
