@@ -1,22 +1,12 @@
-import { useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
-import { MENU_API } from "../utils/constants";
 import { useParams } from "react-router-dom";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
 
-    const [resInfo, setResInfo] = useState(null)
     const { resId } = useParams()  // This is another hook
 
-    useEffect(() => {
-        fetchMenu()
-    }, [])
-
-    const fetchMenu = async () => {
-        const data = await fetch(MENU_API + resId)
-        const json = await data.json();
-        setResInfo(json.data)
-    }
+    const resInfo = useRestaurantMenu(resId)
 
     if (resInfo === null) return <ShimmerUI />  // This condition need to handle the resInfo initially "null"
 
@@ -31,7 +21,7 @@ const RestaurantMenu = () => {
             </p>
             <ul>
                 {
-                    itemCards.map((item) => (
+                    itemCards?.map((item) => (
                         <li key={item.card.info.id}>{item.card.info.name} - {"Rs"} {item.card.info.defaultPrice / 100 || item.card.info.price / 100}</li>
                     ))
                 }

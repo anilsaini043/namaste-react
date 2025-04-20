@@ -33,3 +33,11 @@
 
 # List of Hooks 
   - useState, useEffect, useParams, useRouteError
+
+# Episode 8
+  - Pending
+
+# Episode 9
+  - Custom hook
+  - Online Offline feature
+  - Perfomation improvement with lazy loading  (lazy, Suspense from react)
