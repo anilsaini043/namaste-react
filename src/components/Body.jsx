@@ -38,16 +38,16 @@ const Body = () => {
 
     return listOfRestaurants.length === 0 ? <ShimmerUI /> : (
         <div className="body">
-            <div className="filter-action">
+            <div className="filter-action flex justify-between p-4 m-4">
                 <div>
-                    <input type="text" value={searchText} onChange={handleSearchTextChange} placeholder="Search here..." />
-                    <button className="button" onClick={handleSearchClick}>Search</button>
+                    <input type="text" className="w-100 border border-solid border-black p-2 rounded" value={searchText} onChange={handleSearchTextChange} placeholder="Search here..." />
+                    <button className="px-8 py-2 ml-2 text-white border border-solid border-green-600 bg-green-600 rounded" onClick={handleSearchClick}>Search</button>
                 </div>
-                <button className="button" onClick={handleTopRatedRestaurants}>
+                <button className="px-8 py-2 text-white border border-solid border-green-600 bg-green-600 rounded" onClick={handleTopRatedRestaurants}>
                     Top rated restaurants
                 </button>
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap">
                 {
                     searchedRestro.map((restaurant) => (
                         <Link to={"/restaurants/" + restaurant?.info?.id} key={restaurant?.info?.id}>

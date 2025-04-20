@@ -41,3 +41,7 @@
   - Custom hook
   - Online Offline feature
   - Perfomation improvement with lazy loading  (lazy, Suspense from react)
+
+# Episode 10
+  - Explained different types of style ways and framework (Bootstrap, Ant design, Material UI, Tailwind css etc.)
+  - Install or cofigure Tailwind css for styling  (We use Tailwind css)

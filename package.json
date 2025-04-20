@@ -18,9 +18,11 @@
   "bugs": {},
   "homepage": "",
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^6.13.0"
+    "react-router-dom": "^6.13.0",
+    "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
     "parcel": "^2.13.3",

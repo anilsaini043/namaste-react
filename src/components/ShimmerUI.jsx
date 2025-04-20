@@ -1,26 +1,26 @@
 const ShimmerUI = () => {
     return (
-        <div className="shimmer-container">
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
-            <div className="shimmer-cards"></div>
+        <div className="flex flex-wrap">
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
+            <div className="p-4 m-4 w-[240px] h-[600] bg-grey-100"></div>
         </div>
     )
 }

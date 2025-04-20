@@ -10,12 +10,12 @@ const Header = () => {
 
 
     return (
-        <div className="header">
+        <div className="flex justify-between bg-pink-100 shadow-lg">
             <div className="logo-container">
-                <img className="logo" src={LOGO_URL} alt="logo" />
+                <img className="w-25" src={LOGO_URL} alt="logo" />
             </div>
-            <div className="nav-items">
-                <ul>
+            <div className="flex items-center">
+                <ul className="flex p-4 m-4 gap-8">
                     <li>Online status : {onlineStatus ? "✅" : "🔴"}</li>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About Us</Link></li>
