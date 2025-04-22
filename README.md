@@ -48,3 +48,5 @@
 
 # Episode 11
  - Higher order component
+ - Controlled and Uncontrolled component
+ - Lifting the state up
