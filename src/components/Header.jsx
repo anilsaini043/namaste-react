@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
     
     const [login, setLogin] = useState("Login") ;
     const onlineStatus = useOnlineStatus();
+
+    const { user }= useContext(UserContext)  // Data from context api
 
 
     return (
@@ -22,6 +25,7 @@ const Header = () => {
                     <li><Link to="/contact">Contact Us</Link></li>
                     <li><Link to="/grocery">Grocery</Link></li>
                     <li>Cart</li> 
+                    <li className="font-bold">{user}</li>
                     <button className="button" onClick={()=> login === "Login" ? setLogin("Logout") : setLogin("Login")}>{login}</button>
                 </ul>
             </div>

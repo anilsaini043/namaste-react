@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard.jsx";
 import ShimmerUI from "./ShimmerUI.jsx";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext.jsx";
 
 const Body = () => {
 
@@ -11,6 +12,7 @@ const Body = () => {
     const [searchText, setSearchText] = useState("");
 
     const RestaurantPromotedCard = withPromotedLabel(RestaurantCard) // HOC
+    const { user, setUser } = useContext(UserContext)
 
     useEffect(() => {
         fetchData()
@@ -44,10 +46,16 @@ const Body = () => {
                 <div>
                     <input type="text" className="w-100 border border-solid border-black p-2 rounded" value={searchText} onChange={handleSearchTextChange} placeholder="Search here..." />
                     <button className="px-8 py-2 ml-2 text-white border border-solid border-green-600 bg-green-600 rounded" onClick={handleSearchClick}>Search</button>
+                    <button className="px-8 py-2 ml-10 text-white border border-solid border-green-600 bg-green-600 rounded" onClick={handleTopRatedRestaurants}>
+                        Top rated restaurants
+                    </button>
                 </div>
-                <button className="px-8 py-2 text-white border border-solid border-green-600 bg-green-600 rounded" onClick={handleTopRatedRestaurants}>
-                    Top rated restaurants
-                </button>
+                
+                {/* Update context value */}
+                <div>
+                    <label>Update logged user : </label>
+                    <input className="border p-2 rounded placeholder-gray-400" type="text" placeholder="Update context api value here..." value={user} onChange={(e) => setUser(e.target.value)} />
+                </div>
             </div>
             <div className="flex flex-wrap">
                 {

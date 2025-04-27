@@ -50,3 +50,5 @@
  - Higher order component
  - Controlled and Uncontrolled component
  - Lifting the state up
+ - Props drilling
+ - Context API

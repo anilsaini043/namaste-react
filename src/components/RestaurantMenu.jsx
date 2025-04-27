@@ -5,7 +5,7 @@ import RestaurantCategory from "./RestaurantCategory";
 import { useState } from "react";
 
 const RestaurantMenu = () => {
-    const [showIndex, setShowIndex] = useState(0);
+    const [showIndex, setShowIndex] = useState(null);
 
     const { resId } = useParams()  // This is another hook
     const resInfo = useRestaurantMenu(resId) // Use of HOC 
@@ -27,7 +27,7 @@ const RestaurantMenu = () => {
             {/* Category accordian */}
             {
                 categories.map((category, index) => (
-                    <RestaurantCategory key={index} data={category?.card?.card} showIndex={showIndex === index ? true : false} setShowIndex={() => setShowIndex(index)} />
+                    <RestaurantCategory key={index} data={category?.card?.card} showItems={showIndex === index ? true : false} setShowIndex={() => setShowIndex(index)} />
                 ))
             }
         </div>

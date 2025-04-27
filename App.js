@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDom from "react-dom/client";
 import Header from "./src/components/Header.jsx";
 import Body from "./src/components/Body.jsx";
@@ -8,15 +8,19 @@ import Error from "./src/components/Error.jsx";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./src/components/RestaurantMenu.jsx";
 // import Grocery from "./src/components/Grocery.jsx";
+import UserContext from "./src/utils/UserContext.jsx";
 
 const Grocery = lazy(()=> import("./src/components/Grocery.jsx"))   // Now loading component with lazy loading
 
 const AppLayout = () => {
+    const [ user, setUser ] = useState("Anil");
     return (
         <div className="app">
-            <Header />
-            {/* When the route change than Outlet component filled with children */}
-            <Outlet />
+            <UserContext.Provider value={{user, setUser}}>
+                <Header />
+                {/* When the route change than Outlet component filled with children */}
+                <Outlet />
+            </UserContext.Provider>
         </div>
     )
 };
