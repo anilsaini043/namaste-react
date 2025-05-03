@@ -52,3 +52,12 @@
  - Lifting the state up
  - Props drilling
  - Context API
+
+# Episode 12
+ - Redux toolkit and react-redux
+ - Installation    > npm i @reduxjs/toolkit     and    > npm i react-redux
+ - Build our store
+ - connect to our store to our app
+ - Slice (cartSlice)
+ - dispactch (action)
+ - Selector
